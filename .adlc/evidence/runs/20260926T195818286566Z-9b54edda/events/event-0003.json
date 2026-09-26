@@ -1,0 +1,51 @@
+{
+  "changes": [
+    {
+      "after": "9aff052fcb8c0b99b168e8dda61c64daff722912fdd58fe3ed534db8e25fa80b",
+      "before": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "path": "lifecycle.completed_stages"
+    },
+    {
+      "after": "9ce49cff44ff8d4c92e1928f1cf7d389b33d154a54a431fa73f74c34859654e3",
+      "before": "1bda48a40a6893c3ca20741c81aa6fb0e7d847546f7cb98c924cbdbaa6f68959",
+      "path": "lifecycle.current_stage"
+    },
+    {
+      "after": "da6dada3780bd3f621562baa5280ba0edb41fb2f71f51d2c4af5909ada4d5a4e",
+      "before": "a8c0e510a5ceaffdce2d964d0a3a4b911645a5481bd3227d4d5d90c2b4170094",
+      "path": "lifecycle.next_permitted_stages"
+    },
+    {
+      "after": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+      "before": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+      "path": "revision"
+    },
+    {
+      "after": "3de886560fd9e695f0bd0587e927c4a807e0f2401afc69efffd2326f01050d12",
+      "before": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "path": "stages.spec-it.evidence"
+    },
+    {
+      "after": "043a4248f17a4c20b1bc7b46e520686e8a63f77dad6eb8606c3bd79448d51ba3",
+      "before": "60fbb469e938e5b76503d16f5790912560ab461189a6fa9c6a724c550428c0b3",
+      "path": "stages.spec-it.recorded_at"
+    },
+    {
+      "after": "fedce8e8af485c2586f54c43a9b656dc70b41eb9be8c64b69c98391847dd4baf",
+      "before": "79d116a0c160c52732ff18be65ce4681d3bdf027cafd522cd1e076e816304379",
+      "path": "stages.spec-it.status"
+    },
+    {
+      "after": "043a4248f17a4c20b1bc7b46e520686e8a63f77dad6eb8606c3bd79448d51ba3",
+      "before": "be1b2529e5385a8223dbd64998293828680354eed864bd875328865d4ff56309",
+      "path": "updated_at"
+    }
+  ],
+  "event_type": "lifecycle.transitioned",
+  "manifest_sha256": "abedfdf50e79ca8473f41f567ddf7931e0bc2c1d4dbe80994903e8376ecf0b2c",
+  "previous_event_sha256": "0ffdbee73b0ea7268abe8937cf4df3d589db5bdb25fa8f0eecde9d44a194b920",
+  "recorded_at": "2026-09-26T19:58:34Z",
+  "run_id": "20260926T195818286566Z-9b54edda",
+  "schema_version": "1.0",
+  "sequence": 3
+}

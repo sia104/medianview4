@@ -1,0 +1,26 @@
+{
+  "changes": [
+    {
+      "after": "c9d9c6887a5eca76bcc356e636bf7eb4a763a07cfa3394c3c26b853c57f5bed8",
+      "before": "a65fc2f62a6a15e6f86cc54808c76118d5ffebda0c02b8894f9d7a891e8e05d4",
+      "path": "artifacts"
+    },
+    {
+      "after": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+      "before": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+      "path": "revision"
+    },
+    {
+      "after": "be1b2529e5385a8223dbd64998293828680354eed864bd875328865d4ff56309",
+      "before": null,
+      "path": "updated_at"
+    }
+  ],
+  "event_type": "artifact.repository-identified",
+  "manifest_sha256": "e00b970d78f244ebb2fb335e3d33804ef4c20134cd5b2a0cf28c2cd8509d4eee",
+  "previous_event_sha256": "c654b7b0b85d06403d1451f71e467debddd82665dad3a8b49515051443b7d3a3",
+  "recorded_at": "2026-09-26T19:58:30Z",
+  "run_id": "20260926T195818286566Z-9b54edda",
+  "schema_version": "1.0",
+  "sequence": 2
+}

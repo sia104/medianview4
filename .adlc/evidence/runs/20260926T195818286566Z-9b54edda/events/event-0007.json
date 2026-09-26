@@ -1,0 +1,41 @@
+{
+  "changes": [
+    {
+      "after": "5aff4c577f39dc2372b2317b5e3f9a2f29c997ed539111e5ce371166d41f8714",
+      "before": "fb0c284bf3e3ce017b395ae5f36004dd07e5fd7ab990e8dea222fecea35952cb",
+      "path": "git.branch"
+    },
+    {
+      "after": "ee236eed552964f22aae07d08ced03120b5571395c7f23b05a4ac26f7ddb1d73",
+      "before": "982d80fb40471b1c0d94bab66d67ac707181d8b5d755306c95e8910b2f397182",
+      "path": "lifecycle.completed_stages"
+    },
+    {
+      "after": "2ad47ffa2c44e63f601770d25d4ca879bf9edef3a1ead64bcf60f905f33496f0",
+      "before": "44b00fb30aab06b39fff2678189186a24b7fe8b9c2b1beba2878e1e79c142980",
+      "path": "lifecycle.current_stage"
+    },
+    {
+      "after": "603e58fc9765b18b22c47fa12f47749c4d90e904bf88b29eded897ad94258524",
+      "before": "d5c6101f7c16736502357f4222db4392bdea392895dcbfe5422a74d196a0fb2e",
+      "path": "lifecycle.next_permitted_stages"
+    },
+    {
+      "after": "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451",
+      "before": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+      "path": "revision"
+    },
+    {
+      "after": "6c7ec7fa48cc2eff10c2a151eaa83edcc207f67fb91d16e6cf8544452799b3ae",
+      "before": "eeee87d13d482e597f01322360c761fcaab8035e9cfb24e25a289650a74da5b4",
+      "path": "updated_at"
+    }
+  ],
+  "event_type": "lifecycle.transitioned",
+  "manifest_sha256": "3046efab79cc9333f94346b85dde6f7575ae2c43886e4277870f8537d835f0a5",
+  "previous_event_sha256": "ff1d40ce6cdf7d5f9dbd0df5ad71c147137386c45fd826df78ae452e5b865fe7",
+  "recorded_at": "2026-09-26T19:58:58Z",
+  "run_id": "20260926T195818286566Z-9b54edda",
+  "schema_version": "1.0",
+  "sequence": 7
+}

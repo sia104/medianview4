@@ -1,0 +1,26 @@
+{
+  "changes": [
+    {
+      "after": "b0daa1f1f8564384e73dfafebe8320668ca67099d870990f051aded2ecdfc4c6",
+      "before": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "path": "context.approved_specification"
+    },
+    {
+      "after": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+      "before": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+      "path": "revision"
+    },
+    {
+      "after": "97dedbb9ef282744f805940b1d744364ffdbfbed134d2d72a02b069e8a7350a7",
+      "before": "07d13a3acfdb6c7c6f6eaa4c249e303186e87f07d5a98501c287476d572ef0f9",
+      "path": "updated_at"
+    }
+  ],
+  "event_type": "specification.approved-reference",
+  "manifest_sha256": "468c69d3bcd20d5a2c94f0b1764fe0f939e41f461667f28b9c1131cb1f896f8a",
+  "previous_event_sha256": "be7c0c1c3bd3d6a7bd3a1cbbfe67623131f83b8208fbb2794035888b69d3b2ef",
+  "recorded_at": "2026-09-26T19:58:41Z",
+  "run_id": "20260926T195818286566Z-9b54edda",
+  "schema_version": "1.0",
+  "sequence": 5
+}
