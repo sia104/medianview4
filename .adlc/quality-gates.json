@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "workflow": ".github/workflows/adlc.yml",
+  "required_commands": [
+    "uv sync --project .adlc --frozen --extra dev",
+    "uv run --project .adlc --frozen pytest .adlc/tests",
+    "uv run --project .adlc --frozen ruff check .adlc",
+    "uv run --project .adlc --frozen mypy .adlc/evidence.py .adlc/lifecycle.py .adlc/preflight.py .adlc/adlc_config.py .adlc/gitops.py"
+  ],
+  "required_fragments": {
+    ".adlc/pyproject.toml": [
+      "select = [\"E4\", \"E7\", \"E9\", \"F\", \"I\", \"UP\", \"B\"]",
+      "check_untyped_defs = true",
+      "warn_unused_ignores = true",
+      "strict = true"
+    ]
+  }
+}

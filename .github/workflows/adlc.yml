@@ -1,0 +1,41 @@
+name: ADLC
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  adlc-quality:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v10.2.0
+        with:
+          version: "0.12.19"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sync ADLC environment
+        run: uv sync --project .adlc --frozen --extra dev
+
+      - name: Test ADLC
+        run: uv run --project .adlc --frozen pytest .adlc/tests
+
+      - name: Lint ADLC
+        run: uv run --project .adlc --frozen ruff check .adlc
+
+      - name: Type-check ADLC
+        run: >
+          uv run --project .adlc --frozen mypy
+          .adlc/evidence.py
+          .adlc/lifecycle.py
+          .adlc/preflight.py
+          .adlc/adlc_config.py
+          .adlc/gitops.py

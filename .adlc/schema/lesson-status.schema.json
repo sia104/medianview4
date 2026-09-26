@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/adlc/lesson-status.schema.json",
+  "title": "ADLC Candidate Lesson Status",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "lesson_id",
+    "status",
+    "reason",
+    "human_decision_evidence",
+    "recorded_at",
+    "automatically_applied"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "lesson_id": {"type": "string"},
+    "status": {"enum": ["accepted", "rejected", "superseded"]},
+    "reason": {"type": "string", "minLength": 1},
+    "human_decision_evidence": {"type": "object"},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "automatically_applied": {"const": false}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/adlc/run-manifest.schema.json",
+  "title": "ADLC Run Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "revision",
+    "started_at",
+    "ended_at",
+    "project",
+    "adlc",
+    "context",
+    "git",
+    "stages",
+    "verification",
+    "human_decisions",
+    "failures_and_interventions",
+    "artifacts"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "run_id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"},
+    "revision": {"type": "integer", "minimum": 1},
+    "started_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "ended_at": {"type": ["string", "null"], "format": "date-time"},
+    "project": {
+      "type": "object",
+      "required": ["name", "repository"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "repository": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "adlc": {
+      "type": "object",
+      "required": ["version", "agents_md_sha256", "skills"],
+      "properties": {
+        "version": {"type": "string", "minLength": 1},
+        "agents_md_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "version", "sha256"],
+            "properties": {
+              "name": {"type": "string"},
+              "version": {"type": ["string", "null"]},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "context": {"type": "object"},
+    "git": {"type": "object"},
+    "lifecycle": {
+      "type": "object",
+      "required": [
+        "active_run_id",
+        "current_stage",
+        "completed_stages",
+        "next_permitted_stages",
+        "open"
+      ],
+      "properties": {
+        "active_run_id": {"type": "string"},
+        "current_stage": {
+          "enum": [
+            "specification",
+            "human-specification-approval",
+            "feature-branch",
+            "implementation",
+            "independent-testing",
+            "remediation",
+            "pull-request",
+            "ci",
+            "human-review",
+            "merge",
+            "run-closure",
+            "retrospective"
+          ]
+        },
+        "completed_stages": {"type": "array", "items": {"type": "string"}},
+        "next_permitted_stages": {"type": "array", "items": {"type": "string"}},
+        "open": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "governance": {
+      "type": "object",
+      "required": ["controls", "preflight_evidence"],
+      "properties": {
+        "controls": {
+          "type": "object",
+          "required": [
+            "feature_branch",
+            "ci_before_merge",
+            "human_merge",
+            "quality_gate_changes"
+          ],
+          "additionalProperties": {
+            "type": "object",
+            "required": ["enforcement"],
+            "properties": {
+              "enforcement": {"enum": ["procedural", "technical"]}
+            },
+            "additionalProperties": false
+          }
+        },
+        "preflight_evidence": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "stages": {
+      "type": "object",
+      "required": ["spec-it", "specification-approval", "implement-it", "test-it", "ci", "human-review", "merge"],
+      "additionalProperties": {
+        "type": "object",
+        "required": ["status", "evidence"],
+        "properties": {
+          "status": {"enum": ["not_run", "running", "pass", "fail", "incomplete", "blocked"]},
+          "evidence": {"type": "array", "items": {"type": "string"}},
+          "recorded_at": {"type": "string", "format": "date-time"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "verification": {"type": "object"},
+    "human_decisions": {"type": "array"},
+    "failures_and_interventions": {"type": "array"},
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "category", "created_at"],
+        "properties": {
+          "type": {"enum": ["file", "reference", "derived", "repository"]},
+          "category": {"type": "string"},
+          "path": {"type": "string"},
+          "uri": {"type": "string"},
+          "description": {"type": "string"},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "size": {"type": "integer", "minimum": 0},
+          "supporting_evidence": {"type": "array", "items": {"type": "string"}},
+          "repository_path": {"type": "string"},
+          "commit": {"type": "string"},
+          "created_at": {"type": "string", "format": "date-time"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

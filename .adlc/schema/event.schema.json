@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/adlc/event.schema.json",
+  "title": "ADLC Manifest Event",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "sequence",
+    "event_type",
+    "recorded_at",
+    "previous_event_sha256",
+    "manifest_sha256",
+    "changes"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "run_id": {"type": "string"},
+    "sequence": {"type": "integer", "minimum": 1},
+    "event_type": {"type": "string", "minLength": 1},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "previous_event_sha256": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "before", "after"],
+        "properties": {
+          "path": {"type": "string"},
+          "before": {"type": ["string", "null"]},
+          "after": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
