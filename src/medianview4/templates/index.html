@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% if error %}
+    <p class="error" role="alert">{{ error }}</p>
+  {% endif %}
+
+  <section class="panel" aria-labelledby="upload-title">
+    <h2 id="upload-title">Image Upload</h2>
+    <form method="post" action="{{ url_for('filter_image') }}" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/png,image/jpeg,image/*" aria-label="Image file">
+      <button type="submit">Apply Median Filter</button>
+    </form>
+  </section>
+{% endblock %}

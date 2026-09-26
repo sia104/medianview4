@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block action %}
+  <a class="button" href="{{ url_for('index') }}">New Image</a>
+{% endblock %}
+
+{% block content %}
+  <section class="comparison" aria-label="Image comparison">
+    <figure class="panel">
+      <figcaption>Original</figcaption>
+      <img src="{{ original_image }}" alt="Original uploaded image">
+    </figure>
+    <figure class="panel">
+      <figcaption>Filtered</figcaption>
+      <img src="{{ filtered_image }}" alt="Median-filtered image">
+    </figure>
+  </section>
+{% endblock %}
